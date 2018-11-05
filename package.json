@@ -1,7 +1,7 @@
 {
-  "name": "psd",
+  "name": "psd-patch",
   "description": "A general purpose Photoshop file parser.",
-  "version": "3.2.0",
+  "version": "0.0.1",
   "main": "./index.js",
   "keywords": [
     "psd",
@@ -22,7 +22,8 @@
     "lodash": "~ 2.4",
     "parse-engine-data": "~ 0.1",
     "pngjs": "3.2.0",
-    "rsvp": "~ 3.0.6"
+    "rsvp": "~ 3.0.6",
+    "jpeg-js": "0.3.4"
   },
   "scripts": {
     "test": "mocha test",

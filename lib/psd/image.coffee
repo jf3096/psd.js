@@ -15,6 +15,7 @@ module.exports = class Image extends Module
   @includes ImageMode.RGB
   @includes ImageMode.CMYK
   @includes Export.PNG
+  @includes Export.JPG
   
   # Images can be 1 of 4 different compression types. RLE is the most prevalent, followed by
   # RAW. ZIP compression only happens under special circumstances, and is somewhat rare.

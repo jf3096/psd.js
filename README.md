@@ -1,5 +1,24 @@
 # PSD.js
 
+## Fork Version
+* 新增 JPG 导出方式, 可通过以下形式进行 jpg 生成
+``` js
+var PSD = require('psd');
+
+// Load from URL
+PSD.fromURL("/path/to/file.psd").then(function(psd) {
+  document.getElementById('ImageContainer').appendChild(psd.image.toJpg());
+});
+
+// Load from event, e.g. drag & drop
+function onDrop(evt) {
+  PSD.fromEvent(evt).then(function (psd) {
+    console.log(psd.tree().export());
+  });
+}
+```
+
+
 [![Build Status](https://travis-ci.org/meltingice/psd.js.svg?branch=master)](https://travis-ci.org/meltingice/psd.js)
 [![Help Contribute to Open Source](https://www.codetriage.com/meltingice/psd.js/badges/users.svg)](https://www.codetriage.com/meltingice/psd.js)
 
@@ -67,7 +86,7 @@ PSD.fromURL("/path/to/file.psd").then(function(psd) {
 function onDrop(evt) {
   PSD.fromEvent(evt).then(function (psd) {
     console.log(psd.tree().export());
-  }); 
+  });
 }
 ```
 
@@ -127,7 +146,7 @@ console.log(psd.tree().export());
 Which produces something like:
 
 ``` js
-{ children: 
+{ children:
    [ { type: 'group',
        visible: false,
        opacity: 1,
@@ -139,7 +158,7 @@ Which produces something like:
        bottom: 600,
        height: 600,
        width: 900,
-       children: 
+       children:
         [ { type: 'layer',
             visible: true,
             opacity: 1,
@@ -152,9 +171,9 @@ Which produces something like:
             height: 31,
             width: 361,
             mask: {},
-            text: 
+            text:
              { value: 'Make a change and save.',
-               font: 
+               font:
                 { name: 'HelveticaNeue-Light',
                   sizes: [ 33 ],
                   colors: [ [ 85, 96, 110, 255 ] ],
@@ -165,11 +184,11 @@ Which produces something like:
                bottom: 0,
                transform: { xx: 1, xy: 0, yx: 0, yy: 1, tx: 456, ty: 459 } },
             image: {} } ] } ],
-    document: 
+    document:
        { width: 900,
          height: 600,
-         resources: 
-          { layerComps: 
+         resources:
+          { layerComps:
              [ { id: 692243163, name: 'Version A', capturedInfo: 1 },
                { id: 725235304, name: 'Version B', capturedInfo: 1 },
                { id: 730932877, name: 'Version C', capturedInfo: 1 } ],
